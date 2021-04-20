@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRRabbitMQApiExample", "SignalRRabbitMQApiExample\SignalRRabbitMQApiExample.csproj", "{C8C7A0DF-4738-426B-9D9B-303E9345B03B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSenderExample", "EmailSenderExample\EmailSenderExample.csproj", "{C170DA80-AC50-4BA3-8D74-6112C0FB8AF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8C7A0DF-4738-426B-9D9B-303E9345B03B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8C7A0DF-4738-426B-9D9B-303E9345B03B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8C7A0DF-4738-426B-9D9B-303E9345B03B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8C7A0DF-4738-426B-9D9B-303E9345B03B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C170DA80-AC50-4BA3-8D74-6112C0FB8AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C170DA80-AC50-4BA3-8D74-6112C0FB8AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C170DA80-AC50-4BA3-8D74-6112C0FB8AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C170DA80-AC50-4BA3-8D74-6112C0FB8AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC3D5AAC-5B71-4155-8325-64D727E5E6AE}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Send to mail message!!!</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="signalr.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <link rel="stylesheet" href="node_modules/toastr/build/toastr.min.css">
+    <script src="node_modules/toastr/build/toastr.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            var connection = new signalR.HubConnectionBuilder()
+            .withUrl("http://localhost:5000/messagehub")
+            .build();
+            connection.start();
+
+            connection.on("receiveMessage",message=>{
+                toastr.success(`${message}`);
+            });
+
+            let _connId = "";
+            connection.on("connId",connId=>{
+               _connId = connId;
+            });
+
+
+            $("#btnSender").click(()=>{
+               let email = $("#txtEmail").val();
+               let message = $("#txtMessage").val();
+
+               $.post("http://localhost:5000/api/message",{
+                   Email:email,
+                   Message:message,
+                   ConnectionId:_connId
+               },()=>{
+
+               });
+
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="mt-4 bg-dark p-2 text-white rounded d-inline-block">Send to mail message!!!</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mx-auto mt-4">
+                <div class="mb-3">
+                    <label class="form-label">Email address</label>
+                    <input type="email" value="test@furkankaratas.com" id="txtEmail" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" id="txtMessage" cols="30" rows="10">Merhaba mübarek</textarea>
+                </div>
+            <button id="btnSender" class="btn btn-success float-right">Send Message</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
